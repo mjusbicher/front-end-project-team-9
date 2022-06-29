@@ -52,7 +52,7 @@ const Appbar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
+  )
 };
 
 export default Appbar;
