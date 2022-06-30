@@ -14,6 +14,12 @@ Ej.
 
 | Componente         | Team Member | # Status |
 |--------------|:-----:|-----------:|
-| Profile |  Alumno 1 | <ul><li>- [x] completed</li><li>- [ ] todo</li></ul> |
-| Login   |  Alumno 2 | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
-| Navbar  |  Alumno 2 | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
+| Profile |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [ ] todo</li></ul> |
+| Login   |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
+| ControlLogin |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
+| Navbar  |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
+| MediaCard  |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
+| Register  |  Martin Jusbicher | <ul><li>- [] completed</li><li>- [x] todo</li></ul>   |
+| PasswordReset |  Martin Jusbicher | <ul><li>- [] completed</li><li>- [x] todo</li></ul>   |
+| Error 404   |  Martin Jusbicher | <ul><li>- [] completed</li><li>- [x] todo</li></ul>   |
+| SocialLogin|  Martin Jusbicher | <ul><li>- [] completed</li><li>- [x] todo</li></ul>   |
