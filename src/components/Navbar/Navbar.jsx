@@ -18,13 +18,12 @@ const Appbar = () => {
 
   useEffect(() => {
     setPathname(location.pathname)
-    console.log(location)
   }, [location])
   
 
   return (
     <>
-      {pathname !== '/login' &&
+      { !['/login', '/register'].includes(pathname) &&
       <Navbar className={styles.navbar} variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">

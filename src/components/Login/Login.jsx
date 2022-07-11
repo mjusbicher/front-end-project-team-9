@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import { app } from "../Firebase/Firebase";
+import React from "react";
 import { Form, Button } from "react-bootstrap";
 import styles from "./Login.module.css";
-import { auth, getAuth, signInWithEmailAndPassword,  } from "firebase/auth";
-import firebase, { db } from "../Firebase/Firebase";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useFormInput } from "../utils/forms";
-import { collection, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
+import { db } from "../Firebase/Firebase";
+
 
 var myDB = db;
+
 
 function Login(props) {
   const username = useFormInput("");
@@ -15,18 +16,13 @@ function Login(props) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    let jsonData = {
-      username: username.value,
-      password: password.value,
-    };
-
     const auth = getAuth();
     const { user } = await signInWithEmailAndPassword(
       auth,
       username.value,
       password.value
     );
-
+    console.log(user)
     props.onSuccess(user);
   }
   return (
@@ -43,7 +39,6 @@ function Login(props) {
           <Form.Label className="white">Email</Form.Label>
           <Form.Control type="email" placeholder="Enter email" {...username} />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Contraseña</Form.Label>
           <Form.Control type="password" placeholder="Password" {...password} />
@@ -54,10 +49,11 @@ function Login(props) {
         >
           Ingresar
         </Button>
+        <p>¿No tienes usuario? Registrate <Link to="/register">acá</Link></p>
       </Form>
     </div>
   );
-}
+};
 
 const AuthenticatedUserApp = ({ user }) => {
   return (
