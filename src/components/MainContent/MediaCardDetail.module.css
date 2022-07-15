@@ -1,0 +1,27 @@
+.cardDetail{
+  color:white;
+  display: flex;
+  flex-direction: row !important;
+  width: 100%;
+  height: 100%;
+  background: rgb(41,0,0);
+  background: radial-gradient(circle, rgba(41,0,0,1) 0%, rgba(0,0,0,1) 100%);
+}
+.cardDetailImg{
+  max-width: 350px;
+  max-height: 400px;
+  margin-top: 50px !important;
+  margin: 25px;
+}
+.cardDetailText{
+  margin-top: 50px !important;
+  margin: 25px;
+  text-align: left !important;
+}
+
+@media (max-width:620px) {
+  .cardDetailMobile{
+    display: flex;
+    flex-direction: column !important;
+  }
+}
