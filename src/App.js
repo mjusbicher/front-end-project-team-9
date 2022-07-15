@@ -6,6 +6,8 @@ import { Route, Routes, BrowserRouter, } from 'react-router-dom';
 import MainContent from './components/MainContent/MainContent';
 import ControlLogin from './components/Login/ControlLogin';
 import Register from './components/Register/Register';
+import ItemListContainer from './components/MainContent/ItemListContainer';
+import ItemDetailContainer from './components/MainContent/ItemDetailContainer';
 
 
 
@@ -20,6 +22,8 @@ function App() {
         <Appbar/>
           <Routes>
             <Route path="/" element={<MainContent />}/>
+            <Route path="/category/:categoryId" element={<ItemListContainer />}/>
+            <Route path="/movie/:identificator" element={<ItemDetailContainer />} />
             <Route path="/login" element={<ControlLogin />}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/profile" element={<Profile />}/>

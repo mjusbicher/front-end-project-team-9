@@ -11,8 +11,11 @@ import {
 import styles from './Navbar.module.css';
 import { Link, useLocation } from  'react-router-dom';
 
+
 const Appbar = () => {
   const [pathname, setPathname] = useState('');
+
+  const [open, setOpen] = useState(false);
 
   const location = useLocation();
 
@@ -24,8 +27,10 @@ const Appbar = () => {
   return (
     <>
       { !['/login', '/register'].includes(pathname) &&
-      <Navbar className={styles.navbar} variant="dark" expand="lg">
-        <Container fluid>
+      <Navbar className={[styles.navbar, !!open && styles.navbar_mobile]} variant="dark" expand="lg" onToggle={(event) => {
+        setOpen(event);
+      }}>
+        <Container fluid className={[!!open && styles.navbarFluid]} style={{transition: "all ease-in-out .3s"}}>
           <Navbar.Brand as={Link} to="/">
             <img
               src="https://www.freepnglogos.com/uploads/red-netflix-logo-text-png-3.png"
@@ -35,19 +40,17 @@ const Appbar = () => {
               alt=""
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Toggle aria-controls="navbarScroll"/>
+          <Navbar.Collapse className={[!!open && styles.navbarScroll]} id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
               navbarScroll
             >
               <Nav.Link as={Link} to="/">Inicio</Nav.Link>
-              <Nav.Link as={Link} to="/peliculas">Películas</Nav.Link>
               <NavDropdown title="Categorías" id="navbarScrollingDropdown">
-                <NavDropdown.Item as={Link} to="/peliculas/accion">Acción</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/peliculas/comedia">Comedia</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/peliculas/drama">Drama</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/category/accion">Acción</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/category/comedia">Comedia</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/category/drama">Drama</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link as={Link} to="/favoritos">Mi Lista</Nav.Link>
             </Nav>

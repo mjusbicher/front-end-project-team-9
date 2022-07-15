@@ -16,3 +16,23 @@
 .navbarCategory:hover{
     color: black;
 }
+
+@media (max-width:991px){
+    .navbar_mobile{
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 20;
+        align-items: flex-start !important;
+
+    }
+    .navbarFluid{
+        height: 100% !important;
+        align-items: flex-start !important;
+    }
+    .navbarScroll{
+        height: 100% !important;
+    }
+}  
