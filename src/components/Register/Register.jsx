@@ -3,11 +3,13 @@ import { Form, Button } from "react-bootstrap";
 import styles from "../Login/Login.module.css";
 import { useFormInput } from "../utils/forms";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
   const email = useFormInput("");
   const password = useFormInput("");
+  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -18,6 +20,7 @@ const Register = () => {
       password.value
     );
     console.log(user)
+    navigate('/login')
   }
   
   return (
