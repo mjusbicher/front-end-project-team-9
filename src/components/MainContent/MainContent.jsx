@@ -1,9 +1,20 @@
-import React from "react";
-import Carousel from 'react-bootstrap/Carousel'
-import styles from './MainContent.module.css';
+import React, { useEffect, useState } from "react";
+import Carousel from "react-bootstrap/Carousel";
+import styles from "./MainContent.module.css";
 import ItemList from "./ItemList";
+import { traerData } from "../../data";
 
 const MainContent = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    traerData()
+      .then((res) => {
+        setData(res);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <>
       <Carousel fade={true} interval={5000}>
@@ -59,7 +70,7 @@ const MainContent = () => {
         </Carousel.Item>
       </Carousel>
       <div className={styles.cards}>
-        <ItemList/>
+        <ItemList data={data} />
       </div>
     </>
   );

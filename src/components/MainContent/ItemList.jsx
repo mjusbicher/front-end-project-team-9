@@ -1,8 +1,7 @@
 import React from "react";
 import MediaCard from "./MediaCard";
-import { data } from "../../data";
 
-const ItemList = () => {
+const ItemList = ({data}) => {
     return(
         data.map(item => (
             <MediaCard
