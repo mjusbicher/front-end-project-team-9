@@ -5,6 +5,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useFormInput } from "../utils/forms";
 import { Link } from "react-router-dom";
 import { db } from "../Firebase/Firebase";
+import Profile from "../Profile/Profile";
 
 
 var myDB = db;
@@ -57,9 +58,7 @@ function Login(props) {
 
 const AuthenticatedUserApp = ({ user }) => {
   return (
-    <div>
-      <h1> You're logged as {user.email}</h1>
-    </div>
+    <Profile/>
   );
 };
 
