@@ -202,7 +202,7 @@ export const data = [
     name: "How To Sell Drugs Online",
     category: "comedia",
     type: "serie",
-    cover: "https://pics.filmaffinity.com/How_to_Sell_Drugs_Online_Fast_Serie_de_TV-351581647-large.jpg",
+    cover: "https://flxt.tmsimg.com/assets/p16852051_b_v13_ad.jpg",
     image:
       "https://occ-0-5363-2430.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABQLnEp73Qg8U78HBXwHBhzRS7eAQIKohG5yTJ959CPr4OfS3vR5PpYbF1fGFks0HpBTUfXtyT5oUW_jGz4_SZn5KZRXUUNAbViNt2Vfdm6tfbNNnOXX6z2LVuzg-YZeED1Vs.jpg?r=53c",
   },

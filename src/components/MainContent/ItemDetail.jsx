@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState }from "react";
 import { Card } from "react-bootstrap";
 import styles from "./MediaCardDetail.module.css"
-import Button from 'react-bootstrap/Button';
+import AddFavourite from "../AddFavourite/AddFavourite";
 
 
 const ItemDetail = ({ data }) => {
+
+  const [favourite, setFavourite] = useState();
+
+  function handleFavourites(data) {
+    const favouriteList = [...favourite, data];
+    setFavourite(favouriteList);
+  };
+
+  console.log(favourite)
+
   return (
     <>
       <Card className={[styles.cardDetail, styles.cardDetailMobile]} style={{backgroundColor: "black"}}>
@@ -14,9 +24,7 @@ const ItemDetail = ({ data }) => {
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus laborum sequi, fugiat tempora, eveniet adipisci quia ut rerum numquam ipsam in ea perferendis suscipit sunt doloribus, ad repellat officiis ducimus?
           </p>
-          <Button style={{background: '#e50914', borderColor: '#e50914'}} active>
-            Añadir a Favoritos
-          </Button>
+          <AddFavourite onClick={() => handleFavourites()}/>
         </div>
     </Card>
     </>

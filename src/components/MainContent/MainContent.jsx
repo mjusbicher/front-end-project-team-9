@@ -4,8 +4,9 @@ import styles from "./MainContent.module.css";
 import ItemList from "./ItemList";
 import { traerData } from "../../data";
 
-const MainContent = () => {
+const MainContent = ({filter}) => {
   const [data, setData] = useState([]);
+  const [dataFiltered, setDataFiltered] = useState([]);
 
   useEffect(() => {
     traerData()
@@ -14,6 +15,15 @@ const MainContent = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
+  useEffect(() => {
+    if(data.length > 0){
+      const filterData = data.filter((element) => element.name.toLowerCase().includes(filter.toLowerCase()));
+      setDataFiltered(filterData);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter])
+  
 
   return (
     <>
@@ -70,7 +80,7 @@ const MainContent = () => {
         </Carousel.Item>
       </Carousel>
       <div className={styles.cards}>
-        <ItemList data={data} />
+        <ItemList data={dataFiltered.length > 0 ? dataFiltered : data} />
       </div>
     </>
   );

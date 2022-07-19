@@ -12,11 +12,9 @@ import styles from './Navbar.module.css';
 import { Link, useLocation } from  'react-router-dom';
 
 
-const Appbar = () => {
+const Appbar = ({setQuery}) => {
   const [pathname, setPathname] = useState('');
-
   const [open, setOpen] = useState(false);
-
   const location = useLocation();
 
   useEffect(() => {
@@ -27,7 +25,7 @@ const Appbar = () => {
   return (
     <>
       { !['/login', '/register'].includes(pathname) &&
-      <Navbar className={[styles.navbar, !!open && styles.navbar_mobile]} variant="dark" expand="lg" onToggle={(event) => {
+      <Navbar className={styles.navbar} variant="dark" expand="lg" onToggle={(event) => {
         setOpen(event);
       }}>
         <Container fluid className={[!!open && styles.navbarFluid]} style={{transition: "all ease-in-out .3s"}}>
@@ -60,6 +58,7 @@ const Appbar = () => {
                 placeholder="Buscar"
                 className="me-2"
                 aria-label="Search"
+                onChange={(e)=>setQuery(e.target.value)}
               />
             </Form>
             <Button style={{background: '#e50914', borderColor: '#e50914'}} as={Link} to="/login">Iniciar Sesión</Button>
