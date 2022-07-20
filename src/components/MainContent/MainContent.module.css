@@ -5,3 +5,7 @@
     grid-gap: 10px;
     justify-items: center;
 }
+.carousel{
+    margin: auto;
+    max-width: 1200px;
+}
