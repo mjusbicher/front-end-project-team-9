@@ -1,25 +1,28 @@
-# front-end-project-team-9
+<h1>⚛️Netflix Clone Codo a Codo</h1>
 
-* El proyecto estará inspirado en la plataforma de streaming Netflix.
-* Deploy en: https://react-netflix-cac.netlify.app/
+Proyecto final para el programa del gobierno Codo a Codo 4.0 
 
-# Homework
+<h2>📑Descripción</h2>
 
-* Crear un proyecto de React.
-* Definir un archivo info.md que describa de que se trata el proyecto.  (ejemplos, spotify, netflix, recodatorio de clases, juego... etc..)
-* Definir un componente que sea perfil de usuario... 
+La aplicación está basada en la plataforma de streaming Netflix, cuenta con funciones como:
+- Registro y login del sitio.
+- Buscador funcional.
+- Agregar items a la lista de favoritos de la cuenta logeada.
 
-* Crear una tabla con los componentes e integrantes del equipo en el cual participaron y completaron su trabajo.
-Ej.
+<h2>📷Demo</h2>
 
-| Componente         | Team Member | # Status |
-|--------------|:-----:|-----------:|
-| Profile |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [ ] todo</li></ul> |
-| Login   |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
-| ControlLogin |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
-| Navbar  |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
-| MediaCard  |  Martin Jusbicher | <ul><li>- [x] completed</li><li>- [] todo</li></ul>   |
-| Register  |  Martin Jusbicher | <ul><li>- [] completed</li><li>- [x] todo</li></ul>   |
-| PasswordReset |  Martin Jusbicher | <ul><li>- [] completed</li><li>- [x] todo</li></ul>   |
-| Error 404   |  Martin Jusbicher | <ul><li>- [] completed</li><li>- [x] todo</li></ul>   |
-| SocialLogin|  Martin Jusbicher | <ul><li>- [] completed</li><li>- [x] todo</li></ul>   |
+Not available yet.
+
+<h2>📚Características</h2>
+
+Utilicé la librería Bootstrap para el diseño del sitio y React Router Dom para el manejo de rutas y links.
+Los componentes de registro y logeo están creados mediante Firebase.
+
+<h2>🔗Deploy</h2>
+
+El alojamiento del sitio se realizó en el hosting gratuito Netlify: https://react-netflix-cac.netlify.app/
+
+<h2>📝Créditos</h2>
+
+Gracias por tomarte el tiempo en leer acerca de mi proyecto, espero que sea de tu agrado y toda sugerencia es bienvenida.
+Un saludo!
