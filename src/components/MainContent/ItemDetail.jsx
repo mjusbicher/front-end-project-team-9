@@ -1,19 +1,21 @@
-import React, { useState }from "react";
+import React from "react";
 import { Card } from "react-bootstrap";
 import styles from "./MediaCardDetail.module.css"
-import AddFavourite from "../AddFavourite/AddFavourite";
+import {Button} from "react-bootstrap";
+import { addFavourite, favouriteExists, removeFavourite} from "../utils/favorites";
 
 
 const ItemDetail = ({ data }) => {
 
-  const [favourite, setFavourite] = useState();
+  const elementExists = favouriteExists(data);
 
-  function handleFavourites(data) {
-    const favouriteList = [...favourite, data];
-    setFavourite(favouriteList);
+  const addItem = () => {
+    addFavourite(data)
   };
 
-  console.log(favourite)
+  const removeItem = () => {
+    removeFavourite(data)
+  } 
 
   return (
     <>
@@ -24,7 +26,9 @@ const ItemDetail = ({ data }) => {
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus laborum sequi, fugiat tempora, eveniet adipisci quia ut rerum numquam ipsam in ea perferendis suscipit sunt doloribus, ad repellat officiis ducimus?
           </p>
-          <AddFavourite onClick={() => handleFavourites()}/>
+          <Button onClick={() => {elementExists ? removeItem() : addItem()}} style={{background: '#e50914', borderColor: '#e50914'}}>
+            {!!elementExists ? 'Remover de Favoritos' : 'Añadir a Favoritos'} 
+          </Button>
         </div>
     </Card>
     </>

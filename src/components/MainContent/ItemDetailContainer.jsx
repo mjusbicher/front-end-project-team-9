@@ -5,7 +5,6 @@ import ItemDetail from "./ItemDetail";
 
 function ItemDetailContainer() {
   const [movie, setMovie] = useState([]);
-
   const { identificator } = useParams();
 
   useEffect(() => {
@@ -16,10 +15,9 @@ function ItemDetailContainer() {
       .catch((error) => console.log(error));
   }, [identificator]);
 
-
   return (
     <>
-      <ItemDetail data={movie} />
+      <ItemDetail data={movie}/>
     </>
   );
 }

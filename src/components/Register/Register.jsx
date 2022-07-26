@@ -20,7 +20,7 @@ const Register = () => {
       password.value
     );
     console.log(user)
-    navigate('/login')
+    navigate('/')
   }
   
   return (

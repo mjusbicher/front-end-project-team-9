@@ -5,7 +5,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useFormInput } from "../utils/forms";
 import { Link } from "react-router-dom";
 import { db } from "../Firebase/Firebase";
-import Profile from "../Profile/Profile";
 
 
 var myDB = db;
@@ -23,7 +22,7 @@ function Login(props) {
       username.value,
       password.value
     );
-    console.log(user)
+    localStorage.setItem('user', JSON.stringify(user));
     props.onSuccess(user);
   }
   return (
@@ -56,10 +55,5 @@ function Login(props) {
   );
 };
 
-const AuthenticatedUserApp = ({ user }) => {
-  return (
-    <Profile/>
-  );
-};
 
-export { Login, AuthenticatedUserApp };
+export default Login;

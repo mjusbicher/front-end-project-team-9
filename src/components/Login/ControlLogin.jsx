@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Login, AuthenticatedUserApp } from "./Login";
+import Login from "./Login";
+import { Navigate } from "react-router-dom";
 
 
 const ControlLogin = () => {
@@ -16,7 +17,7 @@ const ControlLogin = () => {
   }, [user]);
 
   return isLoggedIn ? (
-    <AuthenticatedUserApp user={user} />
+    <Navigate replace to="/main" user={user} />
   ) : (
     <Login onSuccess={setUser}/>
   );

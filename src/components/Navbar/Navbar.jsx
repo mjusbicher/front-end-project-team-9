@@ -24,12 +24,12 @@ const Appbar = ({setQuery}) => {
 
   return (
     <>
-      { !['/login', '/register'].includes(pathname) &&
+      { !['/', '/register'].includes(pathname) &&
       <Navbar className={styles.navbar} variant="dark" expand="lg" onToggle={(event) => {
         setOpen(event);
       }}>
         <Container fluid className={[!!open && styles.navbarFluid]} style={{transition: "all ease-in-out .3s"}}>
-          <Navbar.Brand as={Link} to="/">
+          <Navbar.Brand as={Link} to="/main">
             <img
               src="https://www.freepnglogos.com/uploads/red-netflix-logo-text-png-3.png"
               width="80"
@@ -44,13 +44,13 @@ const Appbar = ({setQuery}) => {
               className="me-auto my-2 my-lg-0"
               navbarScroll
             >
-              <Nav.Link as={Link} to="/">Inicio</Nav.Link>
+              <Nav.Link as={Link} to="/main">Inicio</Nav.Link>
               <NavDropdown title="Categorías" id="navbarScrollingDropdown">
                 <NavDropdown.Item as={Link} to="/category/accion">Acción</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/category/comedia">Comedia</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/category/drama">Drama</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={Link} to="/favoritos">Mi Lista</Nav.Link>
+              <Nav.Link as={Link} to="/mylist">Mi Lista</Nav.Link>
             </Nav>
             <Form className="d-flex">
               <FormControl
@@ -61,7 +61,7 @@ const Appbar = ({setQuery}) => {
                 onChange={(e)=>setQuery(e.target.value)}
               />
             </Form>
-            <Button style={{background: '#e50914', borderColor: '#e50914'}} as={Link} to="/login">Iniciar Sesión</Button>
+            <Button style={{background: '#e50914', borderColor: '#e50914'}} as={Link} to="/">Cerrar Sesión</Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>}
